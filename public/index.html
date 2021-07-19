@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>Chat</title>
 </head>
 <body>
-    Chat App!!!!
+    <div class="container-sm">
+        <h1>Chat App!</h1>
+        <form id="chatForm" >
+            <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea name="message" class="form-control" id="message" rows="2"></textarea>
+            </div>
+            <button type="submit" id="submitChat" class="btn btn-primary">Submit</button>
+            <button type="button" id="sendLocation" class="btn btn-info">Send sendLocation</button>
+        </form>
+    </div>
+
+    <!-- client side library to set up connection between each client with server. Automatically injected
+        instead you can also use node js client side library as well
+        const io = require("socket.io-client");
+        const socket = io("https://server-domain.com");
+    -->
+    <script src="/socket.io/socket.io.js" >  </script>
+    <script src="./js/chat.js">  </script>
 </body>
 </html>
